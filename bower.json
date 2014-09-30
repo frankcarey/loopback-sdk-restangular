@@ -20,5 +20,9 @@
     "client/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "restangular": "1.4.0",
+    "angular": "*"
+  }
 }
