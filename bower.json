@@ -1,0 +1,28 @@
+{
+  "name": "loopback-sdk-restangular",
+  "version": "0.0.1",
+  "homepage": "https://github.com/frankcarey/loopback-sdk-restangular",
+  "authors": [
+    "Frank Carey <fcarey@gmail.com>"
+  ],
+  "description": "A loopback angular sdk based on restangular instead of $resource.",
+  "main": "lb-services.js",
+  "keywords": [
+    "loopback",
+    "angular",
+    "restangular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "restangular": "1.4.0",
+    "angular": "*"
+  }
+}
