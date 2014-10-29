@@ -93,7 +93,9 @@
         this.storage.clearUser();
         this.storage.save();
 
-        return this.restangular.customPOST(null, 'Users/logout');
+        return this.restangular
+        .all("Users")
+        .customPOST(null, 'logout');
       };
 
       this.register = function(regDetails){
@@ -103,8 +105,8 @@
           .then(function(user) {
             // success - user was created, just return the object.
             // if we wanted to register + sign the user in, do that
-            // in your own custom then since we passback the password as well.
-            if(user.password) {
+            // in your own custom .then() since we passback the password as well.
+            if(regDetails.password) {
               user.password = regDetails.password;
             }
             return user;
@@ -186,7 +188,7 @@
         restangular.addFullRequestInterceptor(function(element, operation, what, url, headers, params) {
           headers = headers || {};
           if (self.storage.accessTokenId) {
-            headers.authorization = this.storage.accessTokenId;
+            headers.authorization = self.storage.accessTokenId;
             return {headers: headers};
           }
         });
